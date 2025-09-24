@@ -1,2 +1,4 @@
 it\epicode\entity\Evento.class
+it\epicode\dao\EventoDAO.class
+it\epicode\Application.class
 it\epicode\enums\TipoEvento.class
