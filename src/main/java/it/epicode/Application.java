@@ -52,7 +52,10 @@ public class Application {
             
             // Test 4: Tentativo di ricerca con ID inesistente
             System.out.println("4. Ricerca con ID inesistente...");
-            Evento eventoInesistente = eventoDAO.getById(999L);
+            Evento eventoInesistente = eventoDAO.getById(999L); 
+            if (eventoInesistente == null) {
+                System.out.println("Evento non trovato (come previsto).");
+            }
             System.out.println();
             
             // Test 5: Eliminazione di un evento
@@ -62,7 +65,11 @@ public class Application {
             
             // Test 6: Verifica che l'evento sia stato eliminato
             System.out.println("6. Verifica eliminazione...");
-            Evento eventoEliminato = eventoDAO.getById(2L);
+            if (eventoDAO.getById(2L) == null) {
+                System.out.println("Evento 2 eliminato con successo.");
+            } else {
+                System.out.println("Evento 2 ancora presente nel database.");
+            }
             System.out.println();
             
             System.out.println("=== TEST COMPLETATI CON SUCCESSO ===");
